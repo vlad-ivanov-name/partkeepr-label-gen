@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head></head>
+<style>
+/* reset.css start */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, main,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* reset.css end */
+@page {
+    margin: 1cm;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.label {
+	width: 5cm;
+	height: 2cm;
+	overflow: hidden;
+	padding: 3mm;
+	border: 1.5mm solid black;
+}
+.label__location, .label__partname {
+	font-family: "Liberation Sans", Sans;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+	display: block;
+	padding-bottom: 0.5mm;
+}
+.label__location {
+	font-size: 14pt;
+}
+.label__partname {
+	font-size: 12pt;
+}
+.label img {
+	width: 100%;
+	height: 1cm;
+}
+</style>
+<body>
+	<div class="container">
+	{% for label in labels %}
+		<div class="label">
+			<span class="label__location">{{ label.storageLocation }}</span>
+			<span class="label__partname">{{ label.partName }}</span>
+			<img src="images/{{ label.barcode }}" />
+		</div>
+	{% endfor %}
+	</div>
+</body>
+</html>
