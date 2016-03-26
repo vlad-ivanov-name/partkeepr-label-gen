@@ -1,6 +1,8 @@
 ## partkeepr-label-gen
 
 This tool generates a page with labels and barcodes from PartKeepr CSV export.
+It is meant to be used in an environment where each part has its own storage 
+location.
 
 Usage:
 
@@ -16,3 +18,7 @@ Usage:
     
 1. Open `output_folder_name/index.html` and print it.
 1. Optionally, edit `template/page.html` to adjust the layout
+
+Here is how it looks (parts from PartKeepr demo):
+
+<img src="example.png" width="400" />
