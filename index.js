@@ -163,6 +163,7 @@
 			saveHTML();
 		} catch (e) {
 			console.error('Error: ' + e.message);
+			console.log(e.stack);
 		}
 	}
 
