@@ -135,9 +135,9 @@
 
 		const
 			escape = (str) => {
-				return '"' + str
+				return '\'' + str
 					.replace(/\\/g, '\\\\')
-					.replace(/"/g, '\\"') + '"';
+					.replace(/"/g, '\\"') + '\'';
 			};
 
 		for (let i = records.length - 1; i > 0; i--) {
